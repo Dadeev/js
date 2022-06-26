@@ -22,11 +22,29 @@ const arr = []
 const arr2 = arr
 
 
-const copyUser = {}
-copyUser.name = user.name
-copyUser.age = user.age
-copyUser.isOnline = user.isOnline
+// const copyUser = {}
+// copyUser.name = user.name
+// copyUser.age = user.age
+// copyUser.isOnline = user.isOnline
+
+const propName = 'friends'
+
+const copyUser = {
+    ...user,
+    isOnline: true,
+    isStudent: true,
+    [propName]: ['Alex', 'Donald', 'Max']
+} //spread
 
 copyUser.isOnline = true
 console.log(user) // nothing changed
 // оригинал -> делаем копию -> вносим изменения в копию -> используем копию
+console.log(copyUser)
+
+
+//deep copy
+const copy2User = {...copyUser, friends: [...copyUser.friends]}
+
+copy2User.friends.push('Anna')
+console.log(copy2User)
+console.log(copyUser)
