@@ -21,3 +21,11 @@ export function addSkill2(st: StudentType, skill: string) {
         title: skill
     })
 }
+
+export function makeStudentActive(s: StudentType) {
+    s.isActive = true
+}
+
+export const doesStudentLiveIn = (s: StudentType, cityName: string) => {
+    return s.address.city.title === cityName;
+}
